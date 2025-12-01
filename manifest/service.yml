@@ -1,7 +1,7 @@
 apiVersion: v1 
 kind: Service 
 metadata:
-    app: deletetodo 
+    name: deletetodo 
 spec:
   type: ClusterIP 
   selector:
