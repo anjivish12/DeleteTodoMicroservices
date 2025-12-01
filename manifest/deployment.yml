@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: deletetodo
+spec:
+  relicas: 2
+  selector: 
+    matchLabels: 
+      app: deletetodo
+  
+  template: 
+    metadata: 
+      labels: 
+        app: deletetodo
+    containers: 
+    - name: deletetodo
+      image: anjaliacr.azurecr.io/deletetodo:v1 
+      ports: 
+      - containerPort: 3000
+      env:
+      - name: CONNECTION_STRING
+        value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:anjaliserver.database.windows.net,1433;Database=anjalidb;Uid=server;Pwd=#Elemental@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  
