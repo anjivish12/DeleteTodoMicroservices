@@ -4,7 +4,7 @@ metadata:
   name: deletetodo-ingress
 
 spec:
-  ingressClassName: nginx
+  ingressClassName: azure-application-gateway
   rules:
   - host: delete-todo-api.dhoomdhoom.shop
     http: 
